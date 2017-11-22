@@ -1,7 +1,7 @@
 package com.utflo;
 
 public final class GanzeZahl {
-    private long zahl;
+    private final long zahl;
 
     // Konstruktor
     public GanzeZahl(long wert) {
@@ -20,22 +20,22 @@ public final class GanzeZahl {
     }
 
     // Addition
-    public void addiereHinzu(GanzeZahl andereZahl) {
-        zahl += andereZahl.getZahl();
+    public GanzeZahl addiereHinzu(GanzeZahl andereZahl) {
+        return new GanzeZahl(zahl + andereZahl.getZahl());
     }
 
     // Subtraktion
-    public void zieheDavonAb(GanzeZahl andereZahl) {
-        zahl -= andereZahl.getZahl();
+    public GanzeZahl zieheDavonAb(GanzeZahl andereZahl) {
+        return new GanzeZahl(zahl - andereZahl.getZahl());
     }
 
     // Multiplikation
-    public void multipliziereMit(GanzeZahl andereZahl) {
-        zahl *= andereZahl.getZahl();
+    public GanzeZahl multipliziereMit(GanzeZahl andereZahl) {
+        return new GanzeZahl(zahl * andereZahl.getZahl());
     }
 
     // Division
-    public void teileDurch(GanzeZahl dividend) {
-        zahl /= dividend.getZahl();
+    public GanzeZahl teileDurch(GanzeZahl dividend) {
+        return new GanzeZahl(zahl / dividend.getZahl());
     }
 }

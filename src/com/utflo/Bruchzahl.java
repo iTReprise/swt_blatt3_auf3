@@ -28,30 +28,26 @@ public final class Bruchzahl {
     }
 
     // Addition
-    public void bruchAddition(Bruchzahl andererBruch) {
-        zaehler.multipliziereMit(andererBruch.getNenner());
-        andererBruch.getZaehler().multipliziereMit(nenner);
-        nenner.multipliziereMit(andererBruch.getNenner());
-        zaehler.addiereHinzu(andererBruch.getZaehler());
+    public Bruchzahl bruchAddition(Bruchzahl andererBruch) {
+        Bruchzahl zwischenBruch = new Bruchzahl(zaehler.multipliziereMit(andererBruch.nenner), nenner.multipliziereMit(andererBruch.nenner));
+        Bruchzahl zwischenBruch2 = new Bruchzahl(andererBruch.zaehler.multipliziereMit(nenner), zwischenBruch.nenner);
+        return new Bruchzahl(zwischenBruch.zaehler.addiereHinzu(zwischenBruch2.zaehler), zwischenBruch.nenner);
     }
 
     // Subtraktion
-    public void bruchSubtraktion(Bruchzahl andererBruch) {
-        zaehler.multipliziereMit(andererBruch.getNenner());
-        andererBruch.getZaehler().multipliziereMit(nenner);
-        nenner.multipliziereMit(andererBruch.getNenner());
-        zaehler.zieheDavonAb(andererBruch.getZaehler());
+    public Bruchzahl bruchSubtraktion(Bruchzahl andererBruch) {
+        Bruchzahl zwischenBruch = new Bruchzahl(zaehler.multipliziereMit(andererBruch.nenner), nenner.multipliziereMit(andererBruch.nenner));
+        Bruchzahl zwischenBruch2 = new Bruchzahl(andererBruch.zaehler.multipliziereMit(nenner), zwischenBruch.nenner);
+        return new Bruchzahl(zwischenBruch.zaehler.zieheDavonAb(zwischenBruch2.zaehler), zwischenBruch.nenner);
     }
 
     // Multiplikation
-    public void bruchMultiplikation(Bruchzahl andererBruch) {
-        zaehler.multipliziereMit(andererBruch.getZaehler());
-        nenner.multipliziereMit(andererBruch.getNenner());
+    public Bruchzahl bruchMultiplikation(Bruchzahl andererBruch) {
+        return new  Bruchzahl(zaehler.multipliziereMit(andererBruch.zaehler), nenner.multipliziereMit(andererBruch.nenner));
     }
 
     // Division
-    public void bruchDivision(Bruchzahl andererBruch) {
-        zaehler.multipliziereMit(andererBruch.getNenner());
-        nenner.multipliziereMit(andererBruch.getZaehler());
+    public Bruchzahl bruchDivision(Bruchzahl andererBruch) {
+        return new  Bruchzahl(zaehler.multipliziereMit(andererBruch.nenner), nenner.multipliziereMit(andererBruch.zaehler));
     }
 }
