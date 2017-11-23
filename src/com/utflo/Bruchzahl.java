@@ -13,12 +13,12 @@ public final class Bruchzahl {
 
     // get-Methode für Zähler
     public GanzeZahl getZaehler() {
-        return zaehler;
+        return new GanzeZahl(zaehler);
     }
 
     // get-Methode für Nenner
     public GanzeZahl getNenner() {
-        return nenner;
+        return new GanzeZahl(nenner);
     }
 
     // String Override für Ausgabe
