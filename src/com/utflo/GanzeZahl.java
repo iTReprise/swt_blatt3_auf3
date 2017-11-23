@@ -35,7 +35,7 @@ public final class GanzeZahl {
     }
 
     // Division
-    public GanzeZahl teileDurch(GanzeZahl dividend) {
-        return new GanzeZahl(zahl / dividend.getZahl());
+    public GanzeZahl teileDurch(GanzeZahl divisor) {
+        return new GanzeZahl(zahl / divisor.getZahl());
     }
 }
