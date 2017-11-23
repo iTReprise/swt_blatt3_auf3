@@ -20,6 +20,6 @@ public class Main {
         System.out.println("Ergebnis der Addition: " + testBruchzahl.bruchAddition(andereBruchzahl));
         System.out.println("Ergebnis der Subtraktion: " + testBruchzahl.bruchSubtraktion(andereBruchzahl));
         System.out.println("Ergebnis der Multiplikation: " + testBruchzahl.bruchMultiplikation(andereBruchzahl));
-        System.out.println("Ergebnis der Division: " + testBruchzahl.bruchSubtraktion(andereBruchzahl));
+        System.out.println("Ergebnis der Division: " + testBruchzahl.bruchDivision(andereBruchzahl));
     }
 }
